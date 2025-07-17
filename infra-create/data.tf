@@ -9,6 +9,7 @@ data "aws_vpc" "existing" {
     values = ["my-vpc"]
   }
 }
+
 output "vpc_id" {
   value = data.aws_vpc.existing.id
 }

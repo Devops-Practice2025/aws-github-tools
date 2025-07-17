@@ -3,6 +3,7 @@ resource "aws_instance" "tool" {
   instance_type          = var.instance_type
   vpc_security_group_ids = [aws_security_group.tool-sg.id]
   iam_instance_profile   = aws_iam_instance_profile.instance-profile.name
+  subnet_id = data.aws_subnet_ids.subnet_id.id
 
   instance_market_options {
     market_type = "spot"
@@ -15,6 +16,10 @@ resource "aws_instance" "tool" {
   tags = {
     Name = var.name
   }
+}
+
+data "aws_subnet_ids" "subnet_id" {
+  vpc_id = data.aws_vpc.existing.id
 }
 
 resource "aws_security_group" "tool-sg" {
