@@ -12,7 +12,6 @@ resource "aws_instance" "tool" {
       spot_instance_type             = "persistent"
     }
   }
-
   tags = {
     Name = var.name
   }
