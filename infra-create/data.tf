@@ -3,4 +3,9 @@ data "aws_ami" "rhel9" {
   name_regex  = "RHEL-9-DevOps-Practice"
   owners      = ["973714476881"]
 }
-
+data "aws_vpc" "existing" {
+  filter {
+    name   = "tag:Name"
+    values = ["my-vpc"]
+  }
+}
