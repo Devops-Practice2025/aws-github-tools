@@ -10,5 +10,5 @@ data "aws_vpc" "existing" {
   }
 }
 output "vpc_id" {
-  default = data.aws_vpc.existing.id
+  value = data.aws_vpc.existing.id
 }
