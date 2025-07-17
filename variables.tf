@@ -18,5 +18,5 @@ variable "tools" {
 }
 
 variable "hosted_zone_id" {
-  default = "Z00376861T6KFA01SJSIS"
+  default = "Z0436493L9FZXJPEYDDB"
 }
