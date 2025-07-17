@@ -6,7 +6,7 @@ data "aws_ami" "rhel9" {
 data "aws_vpc" "existing" {
   filter {
     name   = "tag:Name"
-    values = ["my-vpc"]
+    values = ["my_vpc"]
   }
 }
 
