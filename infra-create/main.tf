@@ -20,7 +20,7 @@ resource "aws_instance" "tool" {
 resource "aws_security_group" "tool-sg" {
   name        = "${var.name}-sg"
   description = "${var.name}-sg"
-  vpc_id      = aws_vpc.existing.id
+  vpc_id      = data.aws_vpc.existing.id
   egress {
     from_port   = 0
     to_port     = 0
