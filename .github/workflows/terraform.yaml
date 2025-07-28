@@ -23,8 +23,7 @@ jobs:
   
   QA:
     needs: [DEV]
-    env:
-      TF_VAR_environment: qa
+    environment: qa
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
