@@ -3,7 +3,7 @@ resource "aws_instance" "tool" {
   instance_type          = var.instance_type
   vpc_security_group_ids = [aws_security_group.tool-sg.id]
   iam_instance_profile   = aws_iam_instance_profile.instance-profile.name
-  subnet_id = "subnet-0cece18f50f79a9e4"
+  subnet_id = "subnet-0150433a76e9bfe27"
 
   instance_market_options {
     market_type = "spot"
