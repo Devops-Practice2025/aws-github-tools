@@ -22,6 +22,7 @@ jobs:
         run: terraform apply -auto-approve
   destroy:
     runs-on: ubuntu-latest
+    needs: [Provision]
     steps:
       - uses: actions/checkout@v4
 
