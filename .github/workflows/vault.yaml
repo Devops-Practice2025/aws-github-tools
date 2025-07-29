@@ -1,4 +1,4 @@
-name: Run Vault Setup
+name: Run Vault Setup self-hosted
 on: [workflow_dispatch]
 jobs:
   Provision:

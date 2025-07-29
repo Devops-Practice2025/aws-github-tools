@@ -1,4 +1,4 @@
-name: Provision Tool Infra
+name: Provision Tool Infra self hosted
 on: [workflow_dispatch]
 jobs:
   DEV:
