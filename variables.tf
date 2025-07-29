@@ -2,13 +2,13 @@ variable "tools" {
   default = {
 
     github-runner = {
-      instance_type = "t3.small"
+      instance_type = "t2.medium"
       policy_name = [
         "AdministratorAccess"
       ]
     }
     vault = {
-      instance_type = "t3.small"
+      instance_type = "t2.medium"
       policy_name = []
     }
 
@@ -16,5 +16,5 @@ variable "tools" {
 }
 
 variable "hosted_zone_id" {
-  default = "Z01638642TSP1K9JOJ8E9"
+  default = "Z0112628PD9A9RHV8F1A"
 }
