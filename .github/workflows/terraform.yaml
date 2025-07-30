@@ -6,6 +6,8 @@ jobs:
     steps:
       
       - uses: actions/checkout@v4
+      - name: setup terraform
+        uses: hashicorp/setup-terraform@v3
       
       - name: Terraform Init
         run: terraform init
@@ -18,6 +20,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: setup terraform
+        uses: hashicorp/setup-terraform@v3
       - name: Terraform Init
         run: terraform init
       - name: Terraform Apply
