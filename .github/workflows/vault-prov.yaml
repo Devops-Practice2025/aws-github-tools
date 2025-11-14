@@ -18,5 +18,5 @@ jobs:
 
       - run: echo $PATH
       - name: Run Vault Setup
-        run: ansible-playbook -i vault-internal.test.zoom, tool-setup.yml -e ansible_user=${{ secrets.SSH_USER }} -e ansible_password=${{ secrets.SSH_PASS }} -e tool_name=vault
+        run: ansible-playbook -i vault-internal.karthi.online, tool-setup.yml -e ansible_user=${{ secrets.SSH_USER }} -e ansible_password=${{ secrets.SSH_PASS }} -e tool_name=vault
 
