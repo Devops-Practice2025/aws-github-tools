@@ -4,5 +4,6 @@ module "tool-infra-create" {
   name          = each.key
   instance_type = each.value["instance_type"]
   policy_name   = each.value["policy_name"]
-  domain_name =  = var.domain_name
+  domain_name =  var.domain_name
+
 }
