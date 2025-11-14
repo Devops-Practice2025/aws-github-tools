@@ -3,7 +3,7 @@ resource "aws_instance" "tool" {
   instance_type          = var.instance_type
   vpc_security_group_ids = [aws_security_group.tool-sg.id]
   iam_instance_profile   = aws_iam_instance_profile.instance-profile.name
-  subnet_id = "subnet-03beed56c0c97fe72"
+  subnet_id = "subnet-0150433a76e9bfe27"
   tags = {
     Name = var.name
   }
@@ -32,8 +32,21 @@ resource "aws_security_group" "tool-sg" {
   }
 }
 
+resource "aws_route53_zone" "public" {
+  
+  name = var.domain_name
+
+  comment = "Public hosted zone for ${var.domain_name}"
+  force_destroy = false
+
+  tags =  {
+    Name = "public-${var.domain_name}"
+  }
+  }
+
+
 resource "aws_route53_record" "record-public" {
-  zone_id = var.hosted_zone_id
+  zone_id = var.aws_route53_zone.hosted_zone_id
   name    = var.name
   type    = "A"
   ttl     = 10
@@ -41,7 +54,7 @@ resource "aws_route53_record" "record-public" {
 }
 
 resource "aws_route53_record" "record-private" {
-  zone_id = var.hosted_zone_id
+  zone_id = var.aws_route53_zone.hosted_zone_id
   name    = "${var.name}-internal"
   type    = "A"
   ttl     = 10
