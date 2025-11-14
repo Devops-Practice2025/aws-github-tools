@@ -46,7 +46,7 @@ resource "aws_route53_zone" "public" {
 
 
 resource "aws_route53_record" "record-public" {
-  zone_id = aws_route53_zone.public.hosted_zone_id
+  zone_id = aws_route53_zone.public.zone_id
   name    = var.name
   type    = "A"
   ttl     = 10
@@ -54,7 +54,7 @@ resource "aws_route53_record" "record-public" {
 }
 
 resource "aws_route53_record" "record-private" {
-  zone_id = aws_route53_zone.public.hosted_zone_id
+  zone_id = aws_route53_zone.public.zone_id
   name    = "${var.name}-internal"
   type    = "A"
   ttl     = 10
