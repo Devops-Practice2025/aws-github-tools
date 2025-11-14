@@ -15,6 +15,6 @@ variable "tools" {
   }
 }
 
-variable "hosted_zone_id" {
-  default = "Z08394162XL1TAMCMBKSN"
+variable "domain_name" {
+  default = "karthi.online"
 }
