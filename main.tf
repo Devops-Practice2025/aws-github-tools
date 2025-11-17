@@ -5,5 +5,11 @@ module "tool-infra-create" {
   instance_type = each.value["instance_type"]
   policy_name   = each.value["policy_name"]
   domain_name =  var.domain_name
+  subnet_id = module.vpc.subnet_id
+  vpc_id = module.vpc.vpc_id
 
+}
+module "vpc"{
+ source = "./module/vpc" 
+ 
 }

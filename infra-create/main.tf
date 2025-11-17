@@ -3,7 +3,7 @@ resource "aws_instance" "tool" {
   instance_type          = var.instance_type
   vpc_security_group_ids = [aws_security_group.tool-sg.id]
   iam_instance_profile   = aws_iam_instance_profile.instance-profile.name
-  subnet_id = "subnet-0150433a76e9bfe27"
+  subnet_id = var.subnet_id
   tags = {
     Name = var.name
   }
@@ -12,7 +12,7 @@ resource "aws_instance" "tool" {
 resource "aws_security_group" "tool-sg" {
   name        = "${var.name}-sg"
   description = "${var.name}-sg"
-  vpc_id      =  data.aws_vpc.existing.id
+  vpc_id      =  var.vpc_id
   egress {
     from_port   = 0
     to_port     = 0
